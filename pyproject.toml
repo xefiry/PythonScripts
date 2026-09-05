@@ -1,0 +1,13 @@
+[project]
+name = "pythonscripts"
+version = "0.1.0"
+description = "A collection of Python scripts"
+readme = "README.md"
+authors = [
+    { name = "xefiry", email = "188508735+xefiry@users.noreply.github.com" },
+]
+requires-python = ">=3.13"
+dependencies = [
+    "lz4>=4.4.5",
+    "pytest>=9.1.1",
+]
