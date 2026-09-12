@@ -25,7 +25,7 @@ def timstamp_to_date(timestamp: int) -> str:
         return time.strftime(format, time.gmtime(timestamp / 1000))
 
 
-def print_all(db_path: str) -> None:
+def print_permissions(db_path: str) -> None:
     permissions: list[list[str]] = []
 
     con = sqlite3.connect(db_path)

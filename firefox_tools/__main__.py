@@ -4,8 +4,8 @@ import os
 
 from utils import choose_from, normit
 
-from .permissions import print_all as print_permissions
-from .search_engines import print_all as print_search_engines
+from .permissions import print_permissions
+from .search_engines import print_search_engines
 
 # paths to search profiles
 SEARCH_PATHS = ["%AppData%/Mozilla/Firefox/Profiles/", "%AppData%/zen/Profiles/"]
@@ -26,7 +26,7 @@ def get_profiles() -> list[str]:
 def main():
     parser = argparse.ArgumentParser(
         prog="firefox_tools",
-        description="Print permissions and serach engines on Firefox (and Zen) profiles.",
+        description="Print permissions and search engines on Firefox (and Zen) profiles.",
     )
     parser.add_argument(
         "-p", "--permissions", action="store_true", help="only print permissions"

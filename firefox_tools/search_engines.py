@@ -61,7 +61,7 @@ def decode_post(input: dict) -> str:
     return params_string
 
 
-def print_all(input_file: str):
+def print_search_engines(input_file: str):
     with open(input_file, "rb") as file:
         if file.read(8) != b"mozLz40\0":
             raise OSError("Invalid magic number")

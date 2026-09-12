@@ -4,7 +4,7 @@ A collection of Python scripts
 
 | Name             | Description                                                         |
 | ---------------- | ------------------------------------------------------------------- |
-| firefox_tools    | Print permissions and serach engines on Firefox (and Zen) profiles. |
+| firefox_tools    | Print permissions and search engines on Firefox (and Zen) profiles. |
 | seek_and_destroy | Remove files/directories and stop processes that are listed.        |
 | utils            | utils library for the scripts, do not execute it                    |
 
