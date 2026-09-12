@@ -1,4 +1,7 @@
+import math
 import os
+
+import psutil
 
 
 def normit(path: str) -> str:
@@ -86,5 +89,42 @@ def choose_from(values: list[str], _input: str | None = None) -> list[str]:
     return result
 
 
-if __name__ == "__main__":
-    print(choose_from(["a", "b", "c"]))
+def file_size_to_str(input: int) -> str:
+    """Converts a size to a human readable format. Uses base 1024.
+
+    Args:
+        size (int): the size to convert
+
+    Returns:
+        str: the size in human format (eg: 51 MiB)
+    """
+
+    BASE = 1024
+    SUFFIXES = ["B", "KiB", "MiB", "GiB", "TiB"]
+
+    if input == 0:  # special case if input is 0
+        rank = 0
+    else:
+        rank = math.floor(math.log(input, BASE))
+
+    # make sure rank is not grater than max index in SUFFIXES
+    rank = min(rank, len(SUFFIXES) - 1)
+
+    value = round(input / math.pow(BASE, rank), 2)
+    suffix = SUFFIXES[rank]
+
+    return f"{value} {suffix}"
+
+
+def get_proc_list(exe: str) -> list[psutil.Process]:
+    return [
+        x
+        for x in psutil.process_iter(["name"])
+        if x.info["name"].lower() == exe.lower()
+    ]
+
+
+def proc_is_running(exe: str) -> bool:
+    proc = get_proc_list(exe)
+
+    return len(proc) > 0

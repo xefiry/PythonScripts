@@ -6,7 +6,7 @@ import psutil
 import userpaths  # type: ignore
 from send2trash import send2trash
 
-from utils import normit
+from utils import get_proc_list, normit
 from utils.colors import FG
 
 IGNORE_LIST = ["desktop.ini", "Indexed Locations.search-ms"]
@@ -23,14 +23,6 @@ class Result(StrEnum):
     SKIPED = f"{FG.GRAY}Skipped{FG.CLEAR}"
     ERROR = f"{FG.RED}ERROR{FG.CLEAR}"
     OK = f"{FG.WHITE}Ok{FG.CLEAR}"
-
-
-def get_proc_list(exe: str) -> list[psutil.Process]:
-    return [
-        x
-        for x in psutil.process_iter(["name"])
-        if x.info["name"].lower() == exe.lower()
-    ]
 
 
 def is_dir_empty(path: str) -> bool:

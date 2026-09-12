@@ -82,3 +82,37 @@ def test_choose_from_errors():
 
     with pytest.raises(ValueError):
         assert utils.choose_from(VALUES, "1-10")
+
+
+def test_file_size_to_str():
+    TESTS: list[tuple[int, str]] = [
+        (pow(1024, 0) * 0, "0.0 B"),
+        (pow(1024, 0) * 1, "1.0 B"),
+        (pow(1024, 0) * 10, "10.0 B"),
+        (pow(1024, 0) * 100, "100.0 B"),
+        (pow(1024, 0) * 1000, "1000.0 B"),
+        (pow(1024, 1) * 1, "1.0 KiB"),
+        (pow(1024, 1) * 10, "10.0 KiB"),
+        (pow(1024, 1) * 100, "100.0 KiB"),
+        (pow(1024, 1) * 1000, "1000.0 KiB"),
+        (pow(1024, 2) * 1, "1.0 MiB"),
+        (pow(1024, 2) * 10, "10.0 MiB"),
+        (pow(1024, 2) * 100, "100.0 MiB"),
+        (pow(1024, 2) * 1000, "1000.0 MiB"),
+        (pow(1024, 3) * 1, "1.0 GiB"),
+        (pow(1024, 3) * 10, "10.0 GiB"),
+        (pow(1024, 3) * 100, "100.0 GiB"),
+        (pow(1024, 3) * 1000, "1000.0 GiB"),
+        (pow(1024, 4) * 1, "1.0 TiB"),
+        (pow(1024, 4) * 10, "10.0 TiB"),
+        (pow(1024, 4) * 100, "100.0 TiB"),
+        (pow(1024, 4) * 1000, "1000.0 TiB"),
+        (pow(1024, 4) * 10000, "10000.0 TiB"),
+        (1268, "1.24 KiB"),
+        (1268 * 1024, "1.24 MiB"),
+    ]
+
+    for input, expected in TESTS:
+        result = utils.file_size_to_str(input)
+        print(f"{input} -> {result} / {expected}")
+        assert result == expected
