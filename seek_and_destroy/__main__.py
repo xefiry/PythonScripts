@@ -153,6 +153,8 @@ items.add(Type.DIRECTORY, f"{documents}/Modèles Office personnalisés/")
 items.add(Type.DIRECTORY, f"{videos}/Captures/")
 
 # Directories - OneDrive
+items.add(Type.DIRECTORY_FORCED, "%OneDrive%/Documents/Copilot/")
+items.add(Type.DIRECTORY, "%OneDrive%/Documents/")  # keep after Documents/Copilot
 items.add(Type.DIRECTORY, "%OneDrive%/Attachments/")
 items.add(Type.DIRECTORY, "%OneDrive%/Enregistrements/")
 items.add(Type.DIRECTORY, "%OneDrive%/Réunions/")
@@ -166,7 +168,6 @@ items.add(Type.DIRECTORY_FORCED, "%UserProfile%/Favorites/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/Oracle/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/Searches/")
 items.add(Type.DIRECTORY_FORCED, f"{documents}/Blocs-notes OneNote/")
-items.add(Type.DIRECTORY_FORCED, f"{documents}/Copilot/")
 items.add(Type.DIRECTORY_FORCED, f"{documents}/Dell/")
 items.add(Type.DIRECTORY_FORCED, f"{documents}/plsqldoc/")
 
