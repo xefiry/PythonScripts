@@ -77,7 +77,7 @@ class Item:
         try:
             send2trash(self.value)
             self.result = Result.OK
-        except PermissionError as e:
+        except (PermissionError, FileNotFoundError) as e:
             self.result = Result.ERROR
             self.detail = str(e)
 
