@@ -163,6 +163,7 @@ items.add(Type.DIRECTORY, "%OneDrive%/Réunions/")
 items.add(Type.DIRECTORY_FORCED, "%tmp%/DiagOutputDir/")  # WSL "traces"
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.cache/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.copilot")
+items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.dbus-keyrings/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.idlerc/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.lemminx/")
 items.add(Type.DIRECTORY_FORCED, "%UserProfile%/.thumbnails/")
