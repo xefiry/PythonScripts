@@ -60,7 +60,7 @@ def print_permissions(db_path: str) -> None:
         max_width = max(max_width, len(perm[1]))
 
     print(
-        f"{'origin'.ljust(max_width)}  permission  expireType  expireTime           modificationTime"
+        f"{'origin'.ljust(max_width + 2)}  permission  expireType  expireTime           modificationTime"
     )
 
     for perm in permissions:
@@ -69,6 +69,6 @@ def print_permissions(db_path: str) -> None:
             print(perm[0])
 
         print(
-            f"    {perm[1].ljust(max_width)}  {perm[2]}           {perm[3]}           "
+            f"  {perm[1].ljust(max_width)}  {perm[2]}           {perm[3]}           "
             f"{perm[4].ljust(19)}  {perm[5].ljust(19)}"
         )
