@@ -9,7 +9,7 @@ from .search_engines import print_search_engines
 from .vacuum import vacuum_profile
 
 # paths to search profiles
-SEARCH_PATHS = ["%AppData%/Mozilla/Firefox/Profiles/", "%AppData%/zen/Profiles/"]
+SEARCH_PATHS = ["%AppData%/Mozilla/Firefox/Profiles/", "$HOME/.config/mozilla/firefox/"]
 
 
 def get_profiles() -> list[str]:
