@@ -27,7 +27,7 @@ def get_profiles() -> list[str]:
 def main():
     parser = argparse.ArgumentParser(
         prog="firefox_tools",
-        description="""Tools for Firefox (and Zen) : print permissions & search engines, vacuum profiles.
+        description="""Tools for Firefox : print permissions & search engines, vacuum profiles.
 If no option is set, defaults to printing permissions & search engines.""",
         formatter_class=argparse.RawTextHelpFormatter,
     )
